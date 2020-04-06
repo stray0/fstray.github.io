@@ -316,6 +316,16 @@
     n |= n &gt;&gt;&gt; 16;
     return (n &lt; 0) ? 1 : (n &gt;= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
 }</code></pre><p>输入是我们指定的n，输出是大于等于n的2的x次方（小于最大容器值），若输入7，则返回8；输入16，则返回16。</p>
+<h2 id="怎么扩容"><a href="#怎么扩容" class="headerlink" title="怎么扩容"></a>怎么扩容</h2><ul>
+<li>扩容：初始化一个全新的数组，长度为原数组的2倍。</li>
+<li>ReHash：遍历原数组，把所有的节点重新Hash到新数组。</li>
+</ul>
+<blockquote>
+<p>为什么要ReHash而不是直接复制原来的数组？</p>
+</blockquote>
+<p>这就涉及到HashMap中的的Hash规则了</p>
+<p><code>index = HashCode（Key） &amp; （Length - 1）</code></p>
+<p>当数组的大小发生变化后，Hash规则也改变了，所以需要重新ReHash</p>
 
           
         

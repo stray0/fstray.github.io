@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Java," />
 
 
 
@@ -79,16 +79,17 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="HashMapHashMap是Map接口的一个实现类，不保证无序，是非线程安全的。 HashMap是有序的吗？12345678private static void HashMapTest() &amp;#123;        Map&lt;Integer, Integer&gt; map &#x3D; new HashMap();        map.put(3, 1);        map.pu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://stray0.github.io/fstray.github.io/2020/04/05/hello-world/index.html">
+<meta property="og:title" content="HashMap">
+<meta property="og:url" content="https://stray0.github.io/fstray.github.io/2020/04/06/HashMap/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="HashMapHashMap是Map接口的一个实现类，不保证无序，是非线程安全的。 HashMap是有序的吗？12345678private static void HashMapTest() &amp;#123;        Map&lt;Integer, Integer&gt; map &#x3D; new HashMap();        map.put(3, 1);        map.pu">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-04-05T13:51:24.226Z">
-<meta property="article:modified_time" content="2020-04-05T13:51:24.226Z">
+<meta property="article:published_time" content="2020-04-06T07:12:01.000Z">
+<meta property="article:modified_time" content="2020-04-06T09:05:48.489Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://stray0.github.io/fstray.github.io/2020/04/05/hello-world/"/>
+  <link rel="canonical" href="https://stray0.github.io/fstray.github.io/2020/04/06/HashMap/"/>
 
 
 
 
 
-  <title>Hello World | Hexo</title>
+  <title>HashMap | Hexo</title>
   
 
 
@@ -232,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://stray0.github.io/fstray.github.io/fstray.github.io/2020/04/05/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://stray0.github.io/fstray.github.io/fstray.github.io/2020/04/06/HashMap/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -249,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">HashMap</h1>
         
 
         <div class="post-meta">
@@ -261,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-05T21:51:24+08:00">
-                2020-04-05
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-06T15:12:01+08:00">
+                2020-04-06
               </time>
             
 
@@ -299,19 +300,22 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h1 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a><center>HashMap</center></h1><p>HashMap是Map接口的一个实现类，不保证无序，是非线程安全的。</p>
+<h2 id="HashMap是有序的吗？"><a href="#HashMap是有序的吗？" class="headerlink" title="HashMap是有序的吗？"></a>HashMap是有序的吗？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">private static void HashMapTest() &#123;</span><br><span class="line">        Map&lt;Integer, Integer&gt; map &#x3D; new HashMap();</span><br><span class="line">        map.put(3, 1);</span><br><span class="line">        map.put(2, 1);</span><br><span class="line">        for (Integer key : map.keySet()) &#123;</span><br><span class="line">            System.out.print(map.get(key) + &quot; &quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>上面这段代码最终将打印出“2 3”，而不是“3 2”。因为在进行put操作时，HashMap会自动将key排序，那么我们是否可以说，HashMap是有序的了呢？答案是否定的，我们试一下下面一段代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">private static void HashMapTest() &#123;</span><br><span class="line">        Map&lt;String, Integer&gt; map &#x3D; new HashMap();</span><br><span class="line">        for (int i &#x3D; 0;i &lt; 10;i++) &#123;</span><br><span class="line">            map.put(&quot;key&quot; + i,i);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(map);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>我们会发现这里不再是有序的了。所以说，HashMap不是有序的，而是不保证有序（不同于保证无序哦）。</p>
+<h2 id="HashMap是线程安全的吗？"><a href="#HashMap是线程安全的吗？" class="headerlink" title="HashMap是线程安全的吗？"></a>HashMap是线程安全的吗？</h2><p>HashMap不是线程安全的，可以采用HashTable，但是效率较低，若想提升并发时的效率，可以采用ConcurrentHashMap。</p>
+<h2 id="扩容机制"><a href="#扩容机制" class="headerlink" title="扩容机制"></a>扩容机制</h2><p>在初始化HashMap的时候我们可以指定HashMap的容器大小以及负载因子（当Map内个数大于容器大小*负载因子时，会进行扩容），若不指定，则默认的容器大小为16，负载因子为0.75。<br>上面的指定可能用的不恰当，因为并不是我们输入多少，HashMap就生成相应的容器给我们，而是有一定的机制，下面是相应的源代码  </p>
+<pre><code>static final int tableSizeFor(int cap) {
+    int n = cap - 1;
+    n |= n &gt;&gt;&gt; 1;
+    n |= n &gt;&gt;&gt; 2;
+    n |= n &gt;&gt;&gt; 4;
+    n |= n &gt;&gt;&gt; 8;
+    n |= n &gt;&gt;&gt; 16;
+    return (n &lt; 0) ? 1 : (n &gt;= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
+}</code></pre><p>输入是我们指定的n，输出是大于等于n的2的x次方（小于最大容器值），若输入7，则返回8；输入16，则返回16。</p>
 
       
     </div>
@@ -327,27 +331,17 @@
 
     <footer class="post-footer">
       
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/fstray.github.io/2020/04/06/wybTest/" rel="prev" title="wybTest">
-                wybTest <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
+        <div class="post-tags">
+          
+            <a href="/fstray.github.io/tags/Java/" rel="tag"># Java</a>
+          
         </div>
+      
+
+      
+      
+      
+
       
 
       
@@ -421,7 +415,7 @@
               
                 <a href="/fstray.github.io/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -467,7 +461,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HashMap"><span class="nav-number">1.</span> <span class="nav-text">HashMap</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap是有序的吗？"><span class="nav-number">1.1.</span> <span class="nav-text">HashMap是有序的吗？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap是线程安全的吗？"><span class="nav-number">1.2.</span> <span class="nav-text">HashMap是线程安全的吗？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩容机制"><span class="nav-number">1.3.</span> <span class="nav-text">扩容机制</span></a></li></ol></li></ol></div>
             
 
           </div>

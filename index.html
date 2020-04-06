@@ -326,6 +326,10 @@
 <p>这就涉及到HashMap中的的Hash规则了</p>
 <p><code>index = HashCode（Key） &amp; （Length - 1）</code></p>
 <p>当数组的大小发生变化后，Hash规则也改变了，所以需要重新ReHash</p>
+<blockquote>
+<p>为什么扩容之后的大小是原来的2倍？</p>
+</blockquote>
+<p>由上式可知，index的结果几乎取决于（Length - 1），当Length为2的x次方是，（Length - 1）的2进制各位上都是1，所以只要当Hash算法是均匀时，index就是均匀的</p>
 
           
         

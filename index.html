@@ -306,7 +306,7 @@
 <p>1、加载类（ClassLoader加载.class文件到内存）<br>2、执行new，神奇一片内存空间<br>3、调用构造器，创建一个空白对象<br>4、子类调用父类构造器<br>5、构造器执行（执行构造代码块和初始化语句；构造器内容）</p>
 <h1 id="class文件"><a href="#class文件" class="headerlink" title=".class文件"></a>.class文件</h1><p>java文件编译后产生的字节码</p>
 <h1 id="类加载器"><a href="#类加载器" class="headerlink" title="类加载器"></a>类加载器</h1><p>加载.class文件大致可以分为3个步骤<br>1、检查是否已经加载，有就直接返回，避免重复加载<br>2、当前缓存中确实没有该类，那么遵循父优先加载机制，加载.class文件<br>3、上面两步都失败了，调用findClass()方法加载<br>需要注意的是，ClassLoader类本身是抽象类，而抽象类是无法通过new创建对象的。所以它的findClass()方法写的很随意，直接抛了异常，反正你无法通过ClassLoader对象调用。也就是说，父类ClassLoader中的findClass()方法根本不会去加载.class文件。<br>正确的做法是，子类重写覆盖findClass()，在里面写自定义的加载逻辑。</p>
-<h1 id="Class类"><a href="#Class类" class="headerlink" title="Class类"></a>Class类</h1><h1 id="反射API"><a href="#反射API" class="headerlink" title="反射API"></a>反射API</h1><ul>
+<h1 id="反射API"><a href="#反射API" class="headerlink" title="反射API"></a>反射API</h1><ul>
 <li>通过字符串创建相应的对象</li>
 <li>利用字符串的动态性，动态地创建需要的对象</li>
 </ul>

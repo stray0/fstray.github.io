@@ -79,11 +79,15 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://stray0.github.io/fstray.github.io/index.html">
+<meta name="description" content="概念 悲观锁：总是假设最坏的情况，每次去拿数据的时候都认为别人会修改，所以每次在拿数据的时候都会上锁。 乐观锁：总是假设最好的情况，每次去拿数据的时候都认为别人不会修改，所以不会上锁。  乐观锁实现方式1、版本号机制一般是在数据表中加上一个版本号version字段，表示数据被修改的次数，当数据被修改时，version值会加一。当线程A要更新数据值时，在读取数据的同时也会读取version值，在提交">
+<meta property="og:type" content="article">
+<meta property="og:title" content="乐观锁和悲观锁">
+<meta property="og:url" content="https://stray0.github.io/fstray.github.io/2020/04/11/%E4%B9%90%E8%A7%82%E9%94%81%E5%92%8C%E6%82%B2%E8%A7%82%E9%94%81/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="概念 悲观锁：总是假设最坏的情况，每次去拿数据的时候都认为别人会修改，所以每次在拿数据的时候都会上锁。 乐观锁：总是假设最好的情况，每次去拿数据的时候都认为别人不会修改，所以不会上锁。  乐观锁实现方式1、版本号机制一般是在数据表中加上一个版本号version字段，表示数据被修改的次数，当数据被修改时，version值会加一。当线程A要更新数据值时，在读取数据的同时也会读取version值，在提交">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-04-11T14:07:56.000Z">
+<meta property="article:modified_time" content="2020-04-12T08:10:14.249Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 
@@ -115,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://stray0.github.io/fstray.github.io/"/>
+  <link rel="canonical" href="https://stray0.github.io/fstray.github.io/2020/04/11/乐观锁和悲观锁/"/>
 
 
 
 
 
-  <title>Hexo</title>
+  <title>乐观锁和悲观锁 | Hexo</title>
   
 
 
@@ -140,8 +144,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -214,9 +217,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -246,9 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/fstray.github.io/2020/04/11/%E4%B9%90%E8%A7%82%E9%94%81%E5%92%8C%E6%82%B2%E8%A7%82%E9%94%81/" itemprop="url">乐观锁和悲观锁</a></h1>
+          <h1 class="post-title" itemprop="name headline">乐观锁和悲观锁</h1>
         
 
         <div class="post-meta">
@@ -298,9 +299,7 @@
       
 
       
-        
-          
-            <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><ul>
+        <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><ul>
 <li>悲观锁：总是假设最坏的情况，每次去拿数据的时候都认为别人会修改，所以每次在拿数据的时候都会上锁。</li>
 <li>乐观锁：总是假设最好的情况，每次去拿数据的时候都认为别人不会修改，所以不会上锁。</li>
 </ul>
@@ -336,8 +335,6 @@
 <h1 id="CAS和synchronized的使用场景"><a href="#CAS和synchronized的使用场景" class="headerlink" title="CAS和synchronized的使用场景"></a>CAS和synchronized的使用场景</h1><p>1、对于资源竞争较少（线程冲突较轻）的情况，使用synchronized同步锁进行线程阻塞和唤醒切换以及用户内核态间的切换操作额外浪费消耗cpu资源；而CAS基于硬件实现，不需要进入内核，不需要切换线程，操作自旋几率较少，因此可以获得更高的性能。  </p>
 <p>2、对于资源竞争严重（线程冲突严重）的情况，CAS自旋的概率会比较大，从而浪费更多的CPU资源，效率低于synchronized。</p>
 
-          
-        
       
     </div>
     
@@ -354,146 +351,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://stray0.github.io/fstray.github.io/fstray.github.io/2020/04/08/%E5%8F%8D%E5%B0%84/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/fstray.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/fstray.github.io/2020/04/08/%E5%8F%8D%E5%B0%84/" itemprop="url">反射</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-08T21:49:50+08:00">
-                2020-04-08
-              </time>
+              <a href="/fstray.github.io/2020/04/08/%E5%8F%8D%E5%B0%84/" rel="next" title="反射">
+                <i class="fa fa-chevron-left"></i> 反射
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>反射（Reflection）：一种允许在运行时存取程序数据，以改变程序行为的程序设计技术。</p>
-<h1 id="反射的作用"><a href="#反射的作用" class="headerlink" title="反射的作用"></a>反射的作用</h1><p>在Java运行时，对于任意一个类，可以知道该类有哪些属性和方法，对于任意一个对象，可以调用他的任意一个方法，这种动态获取类的信息以及动态调用对象的方法的功能来自于Java的反射机制。</p>
-<h1 id="JVM中创建对象的过程"><a href="#JVM中创建对象的过程" class="headerlink" title="JVM中创建对象的过程"></a>JVM中创建对象的过程</h1><p><code>A a = new A();</code></p>
-<p>1、加载类（ClassLoader加载.class文件到内存）<br>2、执行new，神奇一片内存空间<br>3、调用构造器，创建一个空白对象<br>4、子类调用父类构造器<br>5、构造器执行（执行构造代码块和初始化语句；构造器内容）</p>
-<h1 id="class文件"><a href="#class文件" class="headerlink" title=".class文件"></a>.class文件</h1><p>java文件编译后产生的字节码</p>
-<h1 id="类加载器"><a href="#类加载器" class="headerlink" title="类加载器"></a>类加载器</h1><p>加载.class文件大致可以分为3个步骤<br>1、检查是否已经加载，有就直接返回，避免重复加载<br>2、当前缓存中确实没有该类，那么遵循父优先加载机制，加载.class文件<br>3、上面两步都失败了，调用findClass()方法加载<br>需要注意的是，ClassLoader类本身是抽象类，而抽象类是无法通过new创建对象的。所以它的findClass()方法写的很随意，直接抛了异常，反正你无法通过ClassLoader对象调用。也就是说，父类ClassLoader中的findClass()方法根本不会去加载.class文件。<br>正确的做法是，子类重写覆盖findClass()，在里面写自定义的加载逻辑。</p>
-<h1 id="反射API"><a href="#反射API" class="headerlink" title="反射API"></a>反射API</h1><ul>
-<li>通过字符串创建相应的对象</li>
-<li>利用字符串的动态性，动态地创建需要的对象</li>
-</ul>
-<h1 id="什么是反射？"><a href="#什么是反射？" class="headerlink" title="什么是反射？"></a>什么是反射？</h1><p>反射中有一个反，所以想要解释反射，就必须先从「正」开始解释<br>一般情况下，我们使用某个类时必定知道它是什么类，是用来做什么的。于是我们直接对这个类进行实例化，之后使用这个类对象进行操作。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Apple apple &#x3D; new Apple(); &#x2F;&#x2F;直接初始化，「正射」</span><br><span class="line">apple.setPrice(4);</span><br></pre></td></tr></table></figure>
-<p>上面这样进行类对象的初始化，我们可以理解为「正」<br>而反射则是一开始并不知道我要初始化类的对象是什么，自然也无法使用new来创建对象了<br>这时候，我们使用JDK提供的反射API进行反射调用  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Class clz &#x3D; Class.forName(&quot;com.chenshuyi.reflect.Apple&quot;);</span><br><span class="line">Method method &#x3D; clz.getMethod(&quot;setPrice&quot;, int.class);</span><br><span class="line">Constructor constructor &#x3D; clz.getConstructor();</span><br><span class="line">Object object &#x3D; constructor.newInstance();</span><br><span class="line">method.invoke(object, 4);</span><br></pre></td></tr></table></figure>
-<p>上面两段代码的执行结果，其实是完全一样的。但是其思路完全不一样，第一段代码在未运行时就已经确定了要运行的类（Apple），而第二段代码则是在运行时通过字符串值才得知要运行的类（com.chenshuyi.reflect.Apple）。<br>所以说什么是反射？<br>反射就是在运行时才知道要操作的类是什么，并且可以在运行时获取类的完整构造，并调用对应的方法。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -503,159 +382,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://stray0.github.io/fstray.github.io/fstray.github.io/2020/04/06/HashMap/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/fstray.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/fstray.github.io/2020/04/06/HashMap/" itemprop="url">HashMap</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-06T15:12:01+08:00">
-                2020-04-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>HashMap是Map接口的一个实现类，不保证无序，是非线程安全的。</p>
-<h1 id="HashMap是有序的吗？"><a href="#HashMap是有序的吗？" class="headerlink" title="HashMap是有序的吗？"></a>HashMap是有序的吗？</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">private static void HashMapTest() &#123;</span><br><span class="line">        Map&lt;Integer, Integer&gt; map &#x3D; new HashMap();</span><br><span class="line">        map.put(3, 1);</span><br><span class="line">        map.put(2, 1);</span><br><span class="line">        for (Integer key : map.keySet()) &#123;</span><br><span class="line">            System.out.print(map.get(key) + &quot; &quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>上面这段代码最终将打印出“2 3”，而不是“3 2”。因为在进行put操作时，HashMap会自动将key排序，那么我们是否可以说，HashMap是有序的了呢？答案是否定的，我们试一下下面一段代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">private static void HashMapTest() &#123;</span><br><span class="line">        Map&lt;String, Integer&gt; map &#x3D; new HashMap();</span><br><span class="line">        for (int i &#x3D; 0;i &lt; 10;i++) &#123;</span><br><span class="line">            map.put(&quot;key&quot; + i,i);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(map);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>我们会发现这里不再是有序的了。所以说，HashMap不是有序的，而是不保证有序（不同于保证无序哦）。</p>
-<h1 id="HashMap是线程安全的吗？"><a href="#HashMap是线程安全的吗？" class="headerlink" title="HashMap是线程安全的吗？"></a>HashMap是线程安全的吗？</h1><p>HashMap不是线程安全的，可以采用HashTable，但是效率较低，若想提升并发时的效率，可以采用ConcurrentHashMap。</p>
-<h1 id="扩容机制"><a href="#扩容机制" class="headerlink" title="扩容机制"></a>扩容机制</h1><p>在初始化HashMap的时候我们可以指定HashMap的容器大小以及负载因子（当Map内个数大于容器大小*负载因子时，会进行扩容），若不指定，则默认的容器大小为16，负载因子为0.75。<br>上面的指定可能用的不恰当，因为并不是我们输入多少，HashMap就生成相应的容器给我们，而是有一定的机制，下面是相应的源代码  </p>
-<pre><code>static final int tableSizeFor(int cap) {
-    int n = cap - 1;
-    n |= n &gt;&gt;&gt; 1;
-    n |= n &gt;&gt;&gt; 2;
-    n |= n &gt;&gt;&gt; 4;
-    n |= n &gt;&gt;&gt; 8;
-    n |= n &gt;&gt;&gt; 16;
-    return (n &lt; 0) ? 1 : (n &gt;= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
-}</code></pre><p>输入是我们指定的n，输出是大于等于n的2的x次方（小于最大容器值），若输入7，则返回8；输入16，则返回16。</p>
-<h2 id="怎么扩容"><a href="#怎么扩容" class="headerlink" title="怎么扩容"></a>怎么扩容</h2><ul>
-<li>扩容：初始化一个全新的数组，长度为原数组的2倍。</li>
-<li>ReHash：遍历原数组，把所有的节点重新Hash到新数组。</li>
-</ul>
-<blockquote>
-<p>为什么要ReHash而不是直接复制原来的数组？</p>
-</blockquote>
-<p>这就涉及到HashMap中的的Hash规则了</p>
-<p><code>index = HashCode（Key） &amp; （Length - 1）</code></p>
-<p>当数组的大小发生变化后，Hash规则也改变了，所以需要重新ReHash</p>
-<blockquote>
-<p>为什么扩容之后的大小是原来的2倍？</p>
-</blockquote>
-<p>由上式可知，index的结果几乎取决于（Length - 1），当Length为2的x次方是，（Length - 1）的2进制各位上都是1，所以只要当Hash算法是均匀时，index就是均匀的</p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -663,6 +394,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -683,8 +418,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -735,6 +479,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#乐观锁实现方式"><span class="nav-number">2.</span> <span class="nav-text">乐观锁实现方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、版本号机制"><span class="nav-number">2.1.</span> <span class="nav-text">1、版本号机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、CAS算法"><span class="nav-number">2.2.</span> <span class="nav-text">2、CAS算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CAS缺点"><span class="nav-number">2.2.1.</span> <span class="nav-text">CAS缺点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#悲观锁的实现方式"><span class="nav-number">3.</span> <span class="nav-text">悲观锁的实现方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CAS和synchronized的使用场景"><span class="nav-number">4.</span> <span class="nav-text">CAS和synchronized的使用场景</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -868,6 +628,10 @@
   
 
   
+  <script type="text/javascript" src="/fstray.github.io/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/fstray.github.io/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

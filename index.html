@@ -229,6 +229,133 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://stray0.github.io/fstray.github.io/fstray.github.io/2020/04/12/StringBuffer%E5%92%8CStringBuilder/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/fstray.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/fstray.github.io/2020/04/12/StringBuffer%E5%92%8CStringBuilder/" itemprop="url">StringBuffer和StringBuilder</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-12T16:14:21+08:00">
+                2020-04-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="两者的不同"><a href="#两者的不同" class="headerlink" title="两者的不同"></a>两者的不同</h1><p>1、 StringBuffer是线程安全的，StringBuilder线程不安全</p>
+<p>2、StringBuffer从JDK1.0就有了，StringBuilder从JDK5.0才出现</p>
+<p>3、StringBuffer比StringBuilder多了一个toStringCache字段，用来在toString方法中进行缓存，每次append操作之前都先把toStringCache设置为null，若多次连续调用toString方法，可避免每次Arrays.copyOfRange(value, 0, count)操作，节省性能。</p>
+<p>4、由于StringBuilder没有考虑同步，在单线程情况下，StringBuilder的性能要优于StringBuffer</p>
+<h1 id="单线程StringBuffer与StringBuilder区别"><a href="#单线程StringBuffer与StringBuilder区别" class="headerlink" title="单线程StringBuffer与StringBuilder区别"></a>单线程StringBuffer与StringBuilder区别</h1><p>单线程中，StringBuffer有偏向锁升级过程判断，会耗费时间，效率比StringBuilder低</p>
+<h1 id="StringBuffer与StringBuilder的应用场景"><a href="#StringBuffer与StringBuilder的应用场景" class="headerlink" title="StringBuffer与StringBuilder的应用场景"></a>StringBuffer与StringBuilder的应用场景</h1><p>1、StringBuffer多线程安全，但是加了synchronized，其效率低。故适用于多线程下，并发量不是很高的场景</p>
+<p>2、StringBuilder没有加任何锁，其效率高，适用单线程场景，但同时也适用于高并发场景中，提高高并发场景下程序的响应性能，至于线程安全问题可以通过其它手段解决，如ThreadLocal，CAS操作等。</p>
+<p>3、所以对于高并发场景下，若有用到二者，还是建议优先使用StringBuilder的</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://stray0.github.io/fstray.github.io/fstray.github.io/2020/04/11/%E4%B9%90%E8%A7%82%E9%94%81%E5%92%8C%E6%82%B2%E8%A7%82%E9%94%81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -699,7 +826,7 @@
               
                 <a href="/fstray.github.io/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Java," />
+  <meta name="keywords" content="中间件," />
 
 
 
@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="两者的不同1、 StringBuffer是线程安全的，StringBuilder线程不安全 2、StringBuffer从JDK1.0就有了，StringBuilder从JDK5.0才出现 3、StringBuffer比StringBuilder多了一个toStringCache字段，用来在toString方法中进行缓存，每次append操作之前都先把toStringCache设置为null，若多">
+<meta name="description" content="Nginx负载均衡的算法1、轮询方式 依次将请求分配到各个后台服务器中，是Nginx默认的负载均衡算法，适用于后台机器性能一致的情况  Nginx怎么判断服务器是否宕机？  通过参数proxy_connect_timeout设置连接的超时时间，超时则判定服务器宕机 2、weight根据权重来分发到不同的机器中，指定轮询几率，使用于后台机器性能不均的情况 3、IP_hash根据请求者ip的hash值">
 <meta property="og:type" content="article">
-<meta property="og:title" content="StringBuffer和StringBuilder">
-<meta property="og:url" content="https://stray0.github.io/fstray.github.io/2020/04/12/StringBuffer%E5%92%8CStringBuilder/index.html">
+<meta property="og:title" content="Nginx">
+<meta property="og:url" content="https://stray0.github.io/fstray.github.io/2020/04/12/Nginx/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="两者的不同1、 StringBuffer是线程安全的，StringBuilder线程不安全 2、StringBuffer从JDK1.0就有了，StringBuilder从JDK5.0才出现 3、StringBuffer比StringBuilder多了一个toStringCache字段，用来在toString方法中进行缓存，每次append操作之前都先把toStringCache设置为null，若多">
+<meta property="og:description" content="Nginx负载均衡的算法1、轮询方式 依次将请求分配到各个后台服务器中，是Nginx默认的负载均衡算法，适用于后台机器性能一致的情况  Nginx怎么判断服务器是否宕机？  通过参数proxy_connect_timeout设置连接的超时时间，超时则判定服务器宕机 2、weight根据权重来分发到不同的机器中，指定轮询几率，使用于后台机器性能不均的情况 3、IP_hash根据请求者ip的hash值">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-04-12T08:14:21.000Z">
-<meta property="article:modified_time" content="2020-04-12T08:50:57.514Z">
+<meta property="article:published_time" content="2020-04-12T13:55:59.000Z">
+<meta property="article:modified_time" content="2020-04-15T14:34:46.717Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="Java">
+<meta property="article:tag" content="中间件">
 <meta name="twitter:card" content="summary">
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://stray0.github.io/fstray.github.io/2020/04/12/StringBuffer和StringBuilder/"/>
+  <link rel="canonical" href="https://stray0.github.io/fstray.github.io/2020/04/12/Nginx/"/>
 
 
 
 
 
-  <title>StringBuffer和StringBuilder | Hexo</title>
+  <title>Nginx | Hexo</title>
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://stray0.github.io/fstray.github.io/fstray.github.io/2020/04/12/StringBuffer%E5%92%8CStringBuilder/">
+    <link itemprop="mainEntityOfPage" href="https://stray0.github.io/fstray.github.io/fstray.github.io/2020/04/12/Nginx/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -250,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">StringBuffer和StringBuilder</h1>
+          <h1 class="post-title" itemprop="name headline">Nginx</h1>
         
 
         <div class="post-meta">
@@ -262,7 +262,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-12T16:14:21+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-12T21:55:59+08:00">
                 2020-04-12
               </time>
             
@@ -300,14 +300,16 @@
       
 
       
-        <h1 id="两者的不同"><a href="#两者的不同" class="headerlink" title="两者的不同"></a>两者的不同</h1><p>1、 StringBuffer是线程安全的，StringBuilder线程不安全</p>
-<p>2、StringBuffer从JDK1.0就有了，StringBuilder从JDK5.0才出现</p>
-<p>3、StringBuffer比StringBuilder多了一个toStringCache字段，用来在toString方法中进行缓存，每次append操作之前都先把toStringCache设置为null，若多次连续调用toString方法，可避免每次Arrays.copyOfRange(value, 0, count)操作，节省性能。</p>
-<p>4、由于StringBuilder没有考虑同步，在单线程情况下，StringBuilder的性能要优于StringBuffer</p>
-<h1 id="单线程StringBuffer与StringBuilder区别"><a href="#单线程StringBuffer与StringBuilder区别" class="headerlink" title="单线程StringBuffer与StringBuilder区别"></a>单线程StringBuffer与StringBuilder区别</h1><p>单线程中，StringBuffer有偏向锁升级过程判断，会耗费时间，效率比StringBuilder低</p>
-<h1 id="StringBuffer与StringBuilder的应用场景"><a href="#StringBuffer与StringBuilder的应用场景" class="headerlink" title="StringBuffer与StringBuilder的应用场景"></a>StringBuffer与StringBuilder的应用场景</h1><p>1、StringBuffer多线程安全，但是加了synchronized，其效率低。故适用于多线程下，并发量不是很高的场景</p>
-<p>2、StringBuilder没有加任何锁，其效率高，适用单线程场景，但同时也适用于高并发场景中，提高高并发场景下程序的响应性能，至于线程安全问题可以通过其它手段解决，如ThreadLocal，CAS操作等。</p>
-<p>3、所以对于高并发场景下，若有用到二者，还是建议优先使用StringBuilder的</p>
+        <h1 id="Nginx负载均衡的算法"><a href="#Nginx负载均衡的算法" class="headerlink" title="Nginx负载均衡的算法"></a>Nginx负载均衡的算法</h1><p>1、轮询方式</p>
+<p>依次将请求分配到各个后台服务器中，是Nginx默认的负载均衡算法，适用于后台机器性能一致的情况</p>
+<blockquote>
+<p>Nginx怎么判断服务器是否宕机？</p>
+</blockquote>
+<p>通过参数proxy_connect_timeout设置连接的超时时间，超时则判定服务器宕机</p>
+<p>2、weight<br>根据权重来分发到不同的机器中，指定轮询几率，使用于后台机器性能不均的情况</p>
+<p>3、IP_hash<br>根据请求者ip的hash值将请求发送到后台服务器中，可以保证来自同一ip的请求被打到固定的机器上，可以解决session问题</p>
+<p>4、url_hash<br>根据请求的url的hash值将请求分到不同的机器中，当后台服务器为缓存的时候效率高。</p>
+<p>5、fair<br>根据后台响应时间来分发请求，响应时间短的分发的请求多。</p>
 
       
     </div>
@@ -325,7 +327,7 @@
       
         <div class="post-tags">
           
-            <a href="/fstray.github.io/tags/Java/" rel="tag"># Java</a>
+            <a href="/fstray.github.io/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/" rel="tag"># 中间件</a>
           
         </div>
       
@@ -338,8 +340,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/fstray.github.io/2020/04/11/%E4%B9%90%E8%A7%82%E9%94%81%E5%92%8C%E6%82%B2%E8%A7%82%E9%94%81/" rel="next" title="乐观锁和悲观锁">
-                <i class="fa fa-chevron-left"></i> 乐观锁和悲观锁
+              <a href="/fstray.github.io/2020/04/12/StringBuffer%E5%92%8CStringBuilder/" rel="next" title="StringBuffer和StringBuilder">
+                <i class="fa fa-chevron-left"></i> StringBuffer和StringBuilder
               </a>
             
           </div>
@@ -347,10 +349,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/fstray.github.io/2020/04/12/Nginx/" rel="prev" title="Nginx">
-                Nginx <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -473,7 +471,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#两者的不同"><span class="nav-number">1.</span> <span class="nav-text">两者的不同</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#单线程StringBuffer与StringBuilder区别"><span class="nav-number">2.</span> <span class="nav-text">单线程StringBuffer与StringBuilder区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#StringBuffer与StringBuilder的应用场景"><span class="nav-number">3.</span> <span class="nav-text">StringBuffer与StringBuilder的应用场景</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Nginx负载均衡的算法"><span class="nav-number">1.</span> <span class="nav-text">Nginx负载均衡的算法</span></a></li></ol></div>
             
 
           </div>

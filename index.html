@@ -229,6 +229,135 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://stray0.github.io/fstray.github.io/fstray.github.io/2020/04/12/Nginx/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/fstray.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/fstray.github.io/2020/04/12/Nginx/" itemprop="url">Nginx</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-12T21:55:59+08:00">
+                2020-04-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Nginx负载均衡的算法"><a href="#Nginx负载均衡的算法" class="headerlink" title="Nginx负载均衡的算法"></a>Nginx负载均衡的算法</h1><p>1、轮询方式</p>
+<p>依次将请求分配到各个后台服务器中，是Nginx默认的负载均衡算法，适用于后台机器性能一致的情况</p>
+<blockquote>
+<p>Nginx怎么判断服务器是否宕机？</p>
+</blockquote>
+<p>通过参数proxy_connect_timeout设置连接的超时时间，超时则判定服务器宕机</p>
+<p>2、weight<br>根据权重来分发到不同的机器中，指定轮询几率，使用于后台机器性能不均的情况</p>
+<p>3、IP_hash<br>根据请求者ip的hash值将请求发送到后台服务器中，可以保证来自同一ip的请求被打到固定的机器上，可以解决session问题</p>
+<p>4、url_hash<br>根据请求的url的hash值将请求分到不同的机器中，当后台服务器为缓存的时候效率高。</p>
+<p>5、fair<br>根据后台响应时间来分发请求，响应时间短的分发的请求多。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://stray0.github.io/fstray.github.io/fstray.github.io/2020/04/12/StringBuffer%E5%92%8CStringBuilder/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -826,7 +955,7 @@
               
                 <a href="/fstray.github.io/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -839,7 +968,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
